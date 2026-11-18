@@ -647,7 +647,7 @@ ctx[note[1]](...note.slice(2))</div></div>
     </div>
     <div class="card">
       <h3 style="color:var(--c3)">🎵 Music</h3>
-      <p style="font-size:.92rem">Ten songs from the real game. The one you pick plays while you walk around your valley.</p>
+      <p style="font-size:.92rem">22 songs from the real game, from the menu all the way to the ending. The one you pick plays while you walk around your valley.</p>
       <label>Song<select id="music"></select></label>
       <div class="row"><button class="btn ghost" id="mprev" type="button">▶ Listen</button></div>
     </div>
@@ -901,8 +901,10 @@ LCOL.forEach(function(c,i){var o=document.createElement("option");o.value=i;o.te
 LMARK.forEach(function(m,i){var o=document.createElement("option");o.value=m[0];o.textContent=m[1];if(i===1)o.selected=true;$("lan-mark").appendChild(o)});
 var PL={home:{n:"🏡 Home",r:[0,0,2,2]},pond:{n:"🐟 Pond",r:[7,5,3,3]},shrine:{n:"⛩️ Shrine",r:[0,6,2,2]},oak:{n:"🌳 Big oak",r:[8,2,2,2]},bench:{n:"🪑 Bench",r:[4,7,2,1]},stall:{n:"🥖 Bread stall",r:[2,0,2,1]},lamp:{n:"🏮 Lamp post",r:[6,0,1,1]}};
 Object.keys(PL).forEach(function(k){var l=document.createElement("label");l.innerHTML='<input type="checkbox" id="pl-'+k+'" checked> '+PL[k].n;$("places").appendChild(l)});
-var SONGS=[["menu","Menu theme"],["ch1-opening","Chapter 1 opening"],["ch1-morning","Chapter 1 mornings"],["ch1-evening","Chapter 1 evenings"],["ch1-date","Chapter 1 dates"],["ch2-opening","Chapter 2 opening"],["ch2-morning","Chapter 2 mornings"],["ch2-date","Chapter 2 dates"],["ch3-dungeon","Chapter 3 dungeon"],["ch5-dawn","Chapter 5 dawn"],["none","No music"]];
-SONGS.forEach(function(s,i){var o=document.createElement("option");o.value=s[0];o.textContent="♪ "+s[1];if(i===2)o.selected=true;$("music").appendChild(o)});
+var SONGS=[["Menu and Chapters 1 and 2",[["menu","Menu theme"],["ch1-opening","Chapter 1 opening"],["ch1-morning","Chapter 1 mornings"],["ch1-evening","Chapter 1 evenings"],["ch1-date","Chapter 1 dates"],["ch2-opening","Chapter 2 opening"],["ch2-morning","Chapter 2 mornings"],["ch2-date","Chapter 2 dates"]]],
+ ["Chapters 3 and 5",[["ch3-dungeon","Chapter 3 dungeon"],["ch5-title","Chapter 5 title screen"],["ch5-opening","Chapter 5 opening"],["ch5-calm","Chapter 5 quiet moments"],["ch5-fight","Chapter 5 first fight"],["ch5-rally","Chapter 5 rally"],["ch5-road","Chapter 5 the road"],["ch5-spirit","Chapter 5 spirit realm"],["ch5-boss1","Chapter 5 first boss"],["ch5-boss2","Chapter 5 second boss"],["ch5-final","Chapter 5 final battle"],["ch5-goodbye","Chapter 5 goodbye"],["ch5-dawn","Chapter 5 dawn"],["ch5-ending","Chapter 5 ending"]]],
+ ["",[["none","No music"]]]];
+SONGS.forEach(function(g){var par=$("music");if(g[0]){par=document.createElement("optgroup");par.label=g[0];$("music").appendChild(par)}g[1].forEach(function(s){var o=document.createElement("option");o.value=s[0];o.textContent="♪ "+s[1];if(s[0]==="ch1-morning")o.selected=true;par.appendChild(o)})});
 var MUS=new Audio();MUS.loop=true;MUS.volume=.6;var MON=true,PREV=false;
 function playSong(id){try{if(id==="none"||!MON){MUS.pause();return}var src="music/"+id+".mp3";if(MUS.getAttribute("src")!==src){MUS.setAttribute("src",src)}MUS.volume=.6;var pr=MUS.play();if(pr&&pr.catch)pr.catch(function(){})}catch(e){}}
 $("mprev").onclick=function(){if(PREV&&!MUS.paused){MUS.pause();PREV=false;$("mprev").textContent="▶ Listen";return}PREV=true;MON=true;$("g-mute").textContent="♪ Music on";playSong($("music").value);$("mprev").textContent=$("music").value==="none"?"▶ Listen":"⏸ Stop"};
