@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>The Making of Danoya Valley</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;800;900&family=Caveat:wght@600;700&display=swap">
 <style>
@@ -218,9 +214,37 @@ footer{text-align:center;color:var(--soft);font-size:.9rem;padding:30px 16px 50p
 .surpriseme{background:linear-gradient(90deg,var(--c2),var(--c4));color:#fff}
 @media (max-width:420px){.vb{grid-template-columns:1fr}.vb canvas{margin:0 auto}}
 @media (prefers-reduced-motion:reduce){.flip .f,.flip .b{transition:none}}
+#together{background:linear-gradient(180deg,#13263a,#10203a)}
+#exch{background:linear-gradient(180deg,#10203a,#1c1450)}
+#ults{background:linear-gradient(180deg,#1c1450,#2a1438)}
+.tg-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.tg-dev{background:#ffffff12;border:1.5px solid #7ad0ff66;border-radius:16px;padding:14px;text-align:center;min-width:0}
+.tg-dev b{display:block;font:400 1rem var(--display);color:#bfe8ff}.tg-dev span{font-size:.85rem;color:var(--soft)}
+.tg-arrows{display:flex;flex-direction:column;gap:6px;font-size:.78rem;font-weight:900;color:#7ad0ff;text-align:center}
+.tg-arrows span{animation:tgpulse 2.4s ease-in-out infinite}.tg-arrows span+span{animation-delay:1.2s;color:#ffb35a}
+@keyframes tgpulse{0%,100%{opacity:.45}50%{opacity:1}}
+@media (max-width:520px){.tg-flow{grid-template-columns:1fr}.tg-arrows{flex-direction:row;justify-content:center;flex-wrap:wrap}}
+.tg-tries{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.tg-try{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tg-try .k{font:900 .7rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.tg-try b{font:400 1rem var(--display)}
+.tg-try .bar{height:10px;border-radius:99px;background:#0006;overflow:hidden}.tg-try .bar i{display:block;height:100%;border-radius:99px}
+.tg-try small{font-size:.82rem;color:var(--soft)}
+.ex-map{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.ex-map button{font:inherit;border:0;cursor:pointer;border-radius:14px;padding:12px 8px;color:var(--dark);text-align:center;font-weight:900;box-shadow:0 4px 0 #0004;min-width:0}
+.ex-map button span{display:block;font-size:1.6rem}
+.ex-map .exd{grid-column:1/-1;background:#ffffff10;border-radius:14px;padding:12px 14px;font-size:.95rem;color:var(--ink)}
+@media (max-width:520px){.ex-map{grid-template-columns:repeat(2,1fr)}}
+.ult-pick{display:flex;flex-wrap:wrap;gap:8px}
+.ult-pick button{font:800 .82rem var(--body);border:2px solid var(--line);background:#ffffff0d;color:var(--ink);border-radius:99px;padding:7px 12px;cursor:pointer}
+.ult-pick button[aria-selected="true"]{background:var(--gold);color:var(--dark);border-color:var(--gold)}
+.ult-view{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:560px){.ult-view{grid-template-columns:1fr;justify-items:center}}
+.ult-screen{width:240px;max-width:100%;aspect-ratio:240/288;border-radius:16px;overflow:hidden;border:3px solid var(--gold);box-shadow:0 8px 24px #0006;background:#000}
+.ult-screen video{width:100%;height:100%;display:block;object-fit:cover}
+.ult-info{display:flex;flex-direction:column;gap:8px;min-width:0}
+.ult-info h3{font-size:1.5rem;color:var(--gold)}
 </style>
-</head>
-<body>
 
 <!-- HERO -->
 <section class="sec" id="hero"><div class="in" style="align-items:center;text-align:center">
@@ -228,7 +252,7 @@ footer{text-align:center;color:var(--soft);font-size:.9rem;padding:30px 16px 50p
   <h1>The Making of Danoya Valley</h1>
   <p class="hand">how a little world for two was built, one tiny square at a time</p>
   <canvas class="px strip" id="strip" width="208" height="64" aria-label="Doodi and Danoya walking towards each other"></canvas>
-  <p class="lead" style="margin:0 auto">Danoya Valley is a five chapter game I made for Danoya. It runs in any web browser, on a phone or a laptop, and every picture, sound and story beat in it was planned, drawn, written and tested by me. I did the work, and it took over a month from the first idea to the finished game. I used YouTube and Claude AI to assist me along the way.</p>
+  <p class="lead" style="margin:0 auto">Danoya Valley is a five chapter game I made for Danoya, plus a bonus chapter we can play together on two phones. It runs in any web browser, on a phone or a laptop, and every picture, sound and story beat in it was planned, drawn, written and tested by me. I did the work, and it took over a month from the first idea to the finished game. I used YouTube and Claude AI to assist me along the way.</p>
   <p class="by">By Doodi · with help from YouTube and Claude AI</p>
   <div class="stats" style="width:100%">
     <div class="stat"><b>5</b><span>chapters</span></div>
@@ -237,6 +261,8 @@ footer{text-align:center;color:var(--soft);font-size:.9rem;padding:30px 16px 50p
     <div class="stat"><b>49</b><span>songs</span></div>
     <div class="stat"><b>28</b><span>dungeon rooms</span></div>
     <div class="stat"><b>15</b><span>names to find</span></div>
+    <div class="stat"><b>2</b><span>phones, one game</span></div>
+    <div class="stat"><b>10</b><span>duo ultimates</span></div>
   </div>
 </div></section>
 
@@ -479,16 +505,80 @@ footer{text-align:center;color:var(--soft);font-size:.9rem;padding:30px 16px 50p
   <div class="tips"><div>💾 Saves live in the browser on that device, so a phone and a laptop each keep their own progress.</div><div>🕶️ Private browsing forgets the save when it closes.</div><div>🔕 A phone's silent switch mutes the music.</div></div>
 </div></section>
 
+<!-- PLAYING TOGETHER -->
+<section class="sec" id="together"><div class="in">
+  <span class="eyebrow" style="color:#7ad0ff">Part 12 · Playing together</span>
+  <h2>Two phones, one valley</h2>
+  <p>Playing together had been sitting in the back of my mind for a while: Chapters 3, 4 and 5 at the same time, each on our own phone, even from two different countries. Then Danoya brought it up herself, and mentioned that she and Judy might want to play it together too. That moved it to the front of the list and sped the whole thing up.</p>
+  <div class="tg-flow" aria-label="How the two phones talk">
+    <div class="tg-dev"><b>📱 Host</b><span>runs the real game, keeps the save</span></div>
+    <div class="tg-arrows"><span>drawing notes, sounds, words →</span><span>← joystick and button presses</span></div>
+    <div class="tg-dev"><b>📱 Partner</b><span>shows the picture, sends controls</span></div>
+  </div>
+  <ol class="steps">
+    <li><span><b>A four letter code.</b> The host taps the 👥 button and gets a code like <code>2VT7</code>. The partner types it in, and a free tool called PeerJS connects the two browsers straight to each other. No server of my own, no accounts.</span></li>
+    <li><span><b>Only one real game.</b> The host's phone runs everything: the monsters, the story, the save. The partner's phone is a window and a controller. That way the two games can never disagree about what happened.</span></li>
+    <li><span><b>Picking heroes.</b> In Chapters 3 and 4 the host picks Doodi or Danoya and the partner gets the other. In Chapter 5 both pick from all five heroes.</span></li>
+    <li><span><b>Who presses A in a conversation.</b> Story scenes belong to the host. If the partner walks up to someone and starts talking, that conversation is theirs to click through, and the other phone shows whose turn it is.</span></li>
+    <li><span><b>Music on both phones.</b> The host tells the partner which song is playing and how far into it, so both phones stay in step. Phones block sound until you tap, so a "Tap here for sound" button appears if a song gets blocked.</span></li>
+    <li><span><b>Dropping out is fine.</b> If the partner's connection drops, the host keeps playing and the code stays open. The partner taps Rejoin and lands back in the same spot, as the same hero.</span></li>
+  </ol>
+  <h3 style="color:#7ad0ff">The hardest part: making it smooth</h3>
+  <div class="tg-tries" id="tgtries"></div>
+  <div class="card"><b>What a drawing note looks like.</b> Every time the host's game paints a square, it quietly writes it down. The partner's phone reads the list and paints the exact same squares.
+    <div class="code">// on the host: every paint is written down
+[2,"=fillStyle","#ff4d6d"]
+[2,"fillRect",148,300,6,3]
+// on the partner: paint the same thing
+ctx[note[1]](...note.slice(2))</div></div>
+  <h3 style="color:#7ad0ff">Bugs worth remembering</h3>
+  <div class="fav">
+    <div><b>🎵 The title song that never stopped</b>The partner's phone started its own title music on the first tap and never let go. Now the partner's phone only ever plays what the host sends.</div>
+    <div><b>💀 Game over, but only for one of us</b>The GAME OVER screen's look was added to the page at the last second, so the partner's phone got the words but not the style. Now new styles travel too, and only the host can press Retry.</div>
+    <div><b>📍 The code box in the wrong place</b>On a phone the join box was centred on the whole page instead of the game screen. It now sits on the game itself.</div>
+    <div><b>🐢 Smooth fights, choppy cutscenes</b>Cutscenes redraw the whole screen every frame, which was 375 KB of notes every second. Sending only what changed made it 9 times smaller.</div>
+  </div>
+  <p style="font-size:.95rem">To test it without two phones, I let the robot open two browsers on one computer, joined them with a pretend network, and checked that every pixel on the partner's screen matched the host's. Then Danoya and I played it for real, laptop and iPhone.</p>
+</div></section>
+
+<!-- EX -->
+<section class="sec" id="exch"><div class="in">
+  <span class="eyebrow" style="color:#3ad8c8">Part 13 · The bonus chapter</span>
+  <h2>EX · Valley Days, a playground for two</h2>
+  <p>The five chapters tell a story, and stories end. I wanted somewhere we could keep going together with no story to finish: a little life in the valley we can come back to whenever we want, best played on two phones. So I built a sixth chapter on top of Chapter 5's fighting engine.</p>
+  <div class="ex-map" id="exmap"></div>
+  <div class="grid2">
+    <div class="card"><b>🧑‍🤝‍🧑 Any two of the five.</b> Each of us picks one of Doodi, Danoya, Judy, Dan and Mr. Rocket. Playing alone, your buddy comes along, follows you, waters crops and pulls weeds, and helps in fights. There's an easy mode where the buddy charges in and fights hard.</div>
+    <div class="card"><b>📺 One screen, always.</b> Every place fits on one screen, so neither of us is ever off camera and nobody fights over where the view goes. Walking off an edge takes you both to the next place together.</div>
+    <div class="card"><b>🌾 Real farming.</b> Hoe the grass, plant, water with a can you refill at the well, pull weeds. Fertilizer makes gold crops, sprinklers water for you, and some plants regrow. 11 crops in all.</div>
+    <div class="card"><b>📋 Missions.</b> Nine missions on the board, from Slime Meadow to the Shadow Knight. They pay in coins plus the wood, stone and crystal that the big builds need. Clearing one unlocks the next.</div>
+  </div>
+  <div class="card"><b>Why it is built this way.</b> Everything EX remembers lives in one save box called <code>dv_ex</code>, so the save code and the reset button in Settings already knew how to handle it. When I made the farm bigger and later smaller, the save quietly moved old crops to their new spots, and anything that no longer fit came back as seeds.</div>
+</div></section>
+
+<!-- ULTIMATES -->
+<section class="sec" id="ults"><div class="in">
+  <span class="eyebrow" style="color:var(--gold)">Part 14 · The duo ultimates</span>
+  <h2>Ten pairs, ten finishing moves</h2>
+  <p>In EX there are always exactly two heroes on screen, so every possible pair got its own ultimate: a name, its own lines, and a little set piece built from what those two characters actually do. Hitting monsters fills the meter, then one press of R (or a tap on the gold chip) sets it off. Pick a pair to watch it.</p>
+  <div class="ult-pick" id="ultpick" role="tablist" aria-label="Pick a pair"></div>
+  <div class="ult-view">
+    <div class="ult-screen"><video id="ultvid" muted playsinline loop autoplay preload="auto" aria-label="The ultimate, recorded from the game"></video></div>
+    <div class="ult-info"><span class="eyebrow" id="ultwho"></span><h3 id="ultname"></h3><p id="ultwhat"></p><p class="hand" id="ultinsp" style="font-size:1.3rem;color:var(--gold)"></p><div class="row"><button class="btn ghost" id="ultplay" type="button">⏸ Pause</button></div></div>
+  </div>
+  <p style="font-size:.9rem;color:var(--soft)">Every clip is recorded straight from the game, with King Slime and his slimes in the middle of the field.</p>
+</div></section>
+
 <!-- LESSONS -->
 <section class="sec" id="lessons"><div class="in">
-  <span class="eyebrow">Part 12 · What I learned</span>
+  <span class="eyebrow">Part 15 · What I learned</span>
   <h2>Lessons I'd keep</h2>
   <div class="lessons" id="lessonsg"></div>
 </div></section>
 
 <!-- YOURS -->
 <section class="sec" id="yours"><div class="in">
-  <span class="eyebrow">Part 13 · Your turn</span>
+  <span class="eyebrow">Part 16 · Your turn</span>
   <h2>Make your own little valley</h2>
   <p>Design your own little valley: the two of you, the scenery and the weather, which places are on the map, real neighbours from the game, a pet that follows you around, a surprise hidden somewhere, the ending, and the music. Press <b>Build my valley</b> and it becomes a small playable version of the game, just like the real thing: walk, pick flowers, talk, give gifts and fill the hearts. Stuck for ideas? Press <b>Surprise me</b>.</p>
   <div class="big-fields">
@@ -851,6 +941,9 @@ function petDraw(px,py,kind,d,hop){if(kind==="none")return;py-=hop||0;var flip=d
   cx.restore()}
 /* the mini game */
 var gcv=$("gcv"),W=10,H=8,T=32,DX=[0,1,0,-1],DY=[-1,0,1,0];
+/* names and hearts go on a sharp layer above the pixel art, so text never looks blurry */
+var gtx=document.createElement("canvas");gtx.setAttribute("aria-hidden","true");gtx.style.cssText="position:absolute;left:0;top:0;pointer-events:none;background:transparent!important;border:0!important;box-shadow:none!important;outline:0!important;margin:0!important;padding:0!important;image-rendering:auto!important";gcv.parentNode.insertBefore(gtx,gcv.nextSibling);var gtc=gtx.getContext("2d");
+function ovl(){var w=gcv.clientWidth,h=gcv.clientHeight,bl=gcv.clientLeft,bt=gcv.clientTop,d=Math.min(3,window.devicePixelRatio||1),W2=Math.max(1,Math.round(w*d)),H2=Math.max(1,Math.round(h*d));if(gtx.width!==W2||gtx.height!==H2){gtx.width=W2;gtx.height=H2}gtx.style.left=(gcv.offsetLeft+bl)+"px";gtx.style.top=(gcv.offsetTop+bt)+"px";gtx.style.width=w+"px";gtx.style.height=h+"px";gtc.setTransform(W2/320,0,0,H2/256,0,0);gtc.clearRect(0,0,320,256)}
 var G={};
 var FN=["sunflower","daffodil","lily","tulip"],FE=["🌻","🌼","🪷","🌷"];
 var SPOTS=[[4,1],[7,2],[2,5],[5,6],[3,3]];
@@ -934,9 +1027,9 @@ function drawGame(dt){paint(gcv,function(){var C=G.C;
   if(TOD[C.tod]){cx.fillStyle=TOD[C.tod];cx.fillRect(0,0,320,256)}
   if(NT){for(var st=0;st<16;st++){cx.globalAlpha=.5+.4*Math.sin(time*2+st);R((st*59+7)%320,(st*23+3)%70,2,2,"#fff");cx.globalAlpha=1}if(hasPl("home")){R(10,36,10,10,"#ffd98a");R(44,36,10,10,"#ffd98a")}if(hasPl("lamp"))R(6*T+12,4,8,5,"#ffe08a")}
   drawWx(dt);
-  cx.font="bold 9px sans-serif";cx.textAlign="center";cx.lineWidth=3;cx.strokeStyle="#0009";var labels=G.nbs.map(function(nb){return [nb,nb.name]});labels.push([G.n,C.them]);labels.forEach(function(q){var dd=Math.abs(q[0].x-G.p.x)+Math.abs(q[0].y-G.p.y);if(dd<=3&&dd>0&&!G.end){cx.strokeText(q[1],q[0].x*T+16,q[0].y*T-8);cx.fillStyle="#ffe9a8";cx.fillText(q[1],q[0].x*T+16,q[0].y*T-8)}});
+  ovl();gtc.font="900 9px Nunito,system-ui,sans-serif";gtc.textAlign="center";gtc.lineWidth=3;gtc.lineJoin="round";gtc.strokeStyle="#000a";var labels=G.nbs.map(function(nb){return [nb,nb.name]});labels.push([G.n,C.them]);labels.forEach(function(q){var dd=Math.abs(q[0].x-G.p.x)+Math.abs(q[0].y-G.p.y);if(dd<=3&&dd>0&&!G.end){gtc.strokeText(q[1],q[0].x*T+16,q[0].y*T-8);gtc.fillStyle="#ffe9a8";gtc.fillText(q[1],q[0].x*T+16,q[0].y*T-8)}});
   if(!G.end){var tx=G.p.x+DX[G.p.d],ty=G.p.y+DY[G.p.d];if(tx>=0&&ty>=0&&tx<W&&ty<H&&!blocked(tx,ty)){cx.strokeStyle="#ffffffaa";cx.lineWidth=2;cx.strokeRect(tx*T+2,ty*T+2,T-4,T-4)}}
-  cx.font="16px serif";G.hs=G.hs.filter(function(h){return h.t<1.2});G.hs.forEach(function(h){h.t+=dt;cx.globalAlpha=1-h.t/1.2;cx.fillText("❤️",h.x,h.y-h.t*30);cx.globalAlpha=1});
+  gtc.font="16px serif";G.hs=G.hs.filter(function(h){return h.t<1.2});G.hs.forEach(function(h){h.t+=dt;gtc.globalAlpha=1-h.t/1.2;gtc.fillText("❤️",h.x,h.y-h.t*30);gtc.globalAlpha=1});
   G.sparks=G.sparks.filter(function(s){return s.t<1.4});G.sparks.forEach(function(s){s.t+=dt;s.x+=s.vx*dt;s.y+=s.vy*dt;s.vy+=120*dt;cx.globalAlpha=1-s.t/1.4;R(s.x,s.y,2,2,s.t*10%2>1?"#fff8c0":"#ffd34d");cx.globalAlpha=1});
   if(G.end){G.endT+=dt;var k=Math.min(1,G.endT/2.5);cx.fillStyle="rgba(40,20,70,"+(.55*k)+")";cx.fillRect(0,0,320,256);cx.fillStyle="rgba(255,190,120,"+(.18*k)+")";cx.fillRect(0,0,320,256);
     for(var s=0;s<14;s++){cx.globalAlpha=k*(.4+.4*Math.sin(time*3+s));R((s*53)%320,(s*37)%120,2,2,"#fff");cx.globalAlpha=1}
@@ -963,6 +1056,34 @@ var last=performance.now();
 function loop(now){var dt=Math.min(.05,(now-last)/1000);last=now;time+=dt;drawStrip();drawOutfit();paint($("odoo"),function(){person(4,10,2,"doodi",0,false)});paint($("vcv"),function(){villager(4,10,1,0,vspec())});previews();stepNPC(dt);drawGame(dt);requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
 })();
+/* ---------- playing together, EX and the ultimates ---------- */
+(function(){var $=function(id){return document.getElementById(id)};
+var T=[["Try 1","Send a video","#ff6f5e",100,"Choppy, a bit late, and blurry pixel art. Video is made for films, not tiny squares."],["Try 2","Send drawing notes","#ffb347",30,"Pixel perfect and smooth in fights, but cutscenes sent 375 KB of notes every second."],["Try 3","Only what changed, squeezed","#2ec4a6",4,"Each frame is compared to the last one and squeezed down: about 43 KB a second, 9 times less."]];
+var tt=$("tgtries");if(tt)tt.innerHTML=T.map(function(t){return '<div class="tg-try"><span class="k">'+t[0]+'</span><b>'+t[1]+'</b><div class="bar" aria-hidden="true"><i style="width:'+t[3]+'%;background:'+t[2]+'"></i></div><small>'+t[4]+'</small></div>'}).join("");
+var M=[["🌾","Our Farm","#9ad870","The farm field, the shipping bin and the well. Robin hangs around by the house and has tips."],["🐮","Barn & Orchard","#ffb35a","North of the farm. Chickens, cows and sheep eat hay from the silo and give eggs, milk and wool. Pet them every day and you get gold quality more often. Four fruit trees grow on their own."],["🏘️","Town Square","#7ad0ff","The mission board, Wren's seed stall, and the neighbours. Thirteen little quests, one after another, each with a reward."],["🔨","Our Yard","#ff9ac0","The workbench has 34 things to build, from flower beds to a greenhouse, a hot spring, a beehive that makes honey, and a golden statue of us."]];
+var mp=$("exmap");if(mp){mp.innerHTML=M.map(function(m,i){return '<button type="button" data-i="'+i+'" style="background:'+m[2]+'"><span>'+m[0]+'</span>'+m[1]+'</button>'}).join("")+'<div class="exd" id="exd" aria-live="polite"></div>';
+  function show(i){$("exd").innerHTML='<b>'+M[i][0]+' '+M[i][1]+'.</b> '+M[i][3];[].forEach.call(mp.querySelectorAll("button"),function(b){b.style.outline=+b.dataset.i===i?"3px solid #fff":""})}
+  [].forEach.call(mp.querySelectorAll("button"),function(b){b.onclick=function(){show(+b.dataset.i)}});show(0)}
+var U=[["doodi_danoya","Doodi + Danoya","SUNBREAKER","Danoya pours all her light into Doodi's sword, he leaps, and seven rainbow slashes land at once.","The original, from the end of Chapter 5. The two of them, together, is the whole point of the game."],
+ ["doodi_judy","Doodi + Judy","IRON CROSS","Doodi stands on Judy's hammer, she launches him into the sky, and he falls back riding a giant sword that cracks the ground in an X.","The old \"throw your friend\" team move, and a sword falling like a meteor."],
+ ["doodi_dan","Doodi + Dan","ARROWBLADE","Dan fires one giant arrow, Doodi rides it as it zigzags through the toughest monsters, then an arrow storm finishes the rest.","Cartoon heroes riding their own attacks across the screen."],
+ ["doodi_rocket","Doodi + Mr. Rocket","BLAST RUSH","Rocket builds a launch pad and counts down from three. Doodi blasts off with a fire trail into every marked target.","Mr. Rocket is an inventor, so his part had to be a real rocket launch."],
+ ["danoya_judy","Danoya + Judy","GUARDIAN BELL","Danoya flies up and makes a giant bell out of light. Judy rings it three times, each a different note, and it bursts into a healing dome.","Temple bells, and the idea of Danoya's light making something real for Judy's hammer to hit."],
+ ["danoya_dan","Danoya + Dan","STARFALL","Danoya flies up and draws a constellation over the monsters. Dan shoots every star, and each one falls as a meteor.","Chapter 1's Catching Stars heart event: she draws the sky, he brings it down."],
+ ["danoya_rocket","Danoya + Mr. Rocket","LANTERN NOVA","Rocket builds a lantern rocket, Danoya fills it with light and flies up beside it, and it bursts into a rainbow nova and a rain of lanterns.","Chapter 1's Lantern Dance, with Mr. Rocket's fireworks."],
+ ["judy_dan","Judy + Dan","HAMMER & HAIL","Judy launches the monsters into the air, then launches Dan too, and he shoots them from mid air before everyone crashes down.","Juggle combos in fighting games: launch them up, keep them there."],
+ ["judy_rocket","Judy + Mr. Rocket","EARTHQUAKE ENGINE","Rocket builds a giant piston machine, Judy jumps on its button, and three pounds split the ground with glowing cracks.","The strongest hitter and the best inventor building the biggest machine they can."],
+ ["dan_rocket","Dan + Mr. Rocket","SKYFIRE BARRAGE","Rocket builds a launcher, Dan climbs on top, and they fire eighteen arrows and rockets together, then one giant rocket.","A fireworks show, but aimed at monsters."]];
+var pk=$("ultpick"),vid=$("ultvid"),reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,playing=!reduce;
+function pick(i){var u=U[i];vid.poster="ultv/"+u[0]+".jpg";vid.src="ultv/"+u[0]+".mp4";if(playing){var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){})}$("ultwho").textContent=u[1];$("ultname").textContent=u[2];$("ultwhat").textContent=u[3];$("ultinsp").textContent="Inspired by: "+u[4];
+  [].forEach.call(pk.querySelectorAll("button"),function(b){b.setAttribute("aria-selected",+b.dataset.i===i?"true":"false")})}
+if(pk&&vid){pk.innerHTML=U.map(function(u,i){return '<button type="button" role="tab" data-i="'+i+'">'+u[1]+'</button>'}).join("");
+  [].forEach.call(pk.querySelectorAll("button"),function(b){b.onclick=function(){pick(+b.dataset.i)}});
+  if(reduce){vid.removeAttribute("autoplay");$("ultplay").textContent="▶ Play"}
+  pick(0);
+  $("ultplay").onclick=function(){playing=!playing;if(playing){var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){})}else vid.pause();this.textContent=playing?"⏸ Pause":"▶ Play"};
+  vid.addEventListener("pause",function(){if(!vid.ended){playing=false;$("ultplay").textContent="▶ Play"}});vid.addEventListener("play",function(){playing=true;$("ultplay").textContent="⏸ Pause"})}
+})();
 </script>
-</body>
-</html>
+
+</body></html>
