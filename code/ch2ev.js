@@ -1,7 +1,7 @@
 /* ===== Chapter 2: all-new heart events, mini games and Dan (nothing repeated from Chapter 1) ===== */
 if(CH2){
 /* ---------- new people ---------- */
-VSPEC.dan={skin:"#d9a066",hair:"#1f2430",hs:"short",stub:"#1f243033",brow:"#1f2430",top:"#2f9d8f",bot:"#2f3a5a",goggles:0};
+VSPEC.dan={skin:"#d9a066",hair:"#e6e2d8",hs:"side",brow:"#b9b4a8",top:"#6b3fa0",bot:"#2a2a35",goggles:0};
 VN.push({id:"dan",name:"Dan",sched:[[9,17,80,19,3],[17,22,36,29,1]],day:1});
 CH2LINES.dan=["Danoya! Have you tried the pastries in the square yet? Rocket says he invented them. Tom says Rocket stole the recipe. I say I eat them either way.","I have known Doodi forever. He talks about you like you are the weather: constantly, and with great respect.","Do not tell him I said this, but he is the happiest I have ever seen him. Treat that like a state secret."];
 CH2LINES.judy=["We met properly at the fire on the South Green, remember? I am still thinking about that pot of stew.","Alright, you. Doodi said I could vet the fish named after you. It is a very cute fish.","I may be the loud one, but I was the first to say he was good for you. Do not tell him. He will get insufferable.","I flew in from Manila and I am not leaving until I have seen the whole valley. Twice."];
